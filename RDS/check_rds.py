@@ -17,6 +17,7 @@ import getpass
 API_Key = 'ID'
 API_Secret = 'Secret'
 RegionId = 'cn-shenzhen'  # 阿里云区域代码
+Cache_Timeout = 60  # 缓存过期时间（秒），应小于或等于监控项的最小间隔时间
 
 Item_Type = sys.argv[1]  # 类型 Disk or Performance
 DBInstanceId = sys.argv[2]  # 实例ID
@@ -46,7 +47,7 @@ class FileCache(object):
             os.makedirs(dir_path)
             os.chmod(dir_path, stat.S_IRWXU | stat.S_IRWXG | stat.S_IRWXO)  # 修改目录权限777
 
-    def get_info_from_file(self, seconds=300):
+    def get_info_from_file(self, seconds=Cache_Timeout):
         """
         cache文件的内容，第一行是时间戳，第二行是json数据内容
         :param seconds: 值的有效期，超过这个时间重新请求API获取值
