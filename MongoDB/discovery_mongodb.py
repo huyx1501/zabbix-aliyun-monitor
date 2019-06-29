@@ -32,7 +32,6 @@ class MongoDiscovery(object):
                 self.mongo_instance_list.append(mongo_instance_info)
             except Exception as e:
                 print(Exception, ":", e)
-                traceback.print_exc()
         else:
             return self.mongo_instance_list
 
