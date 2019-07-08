@@ -19,6 +19,16 @@ python = 2.7+ 或 python3.6+  其他版本未测试
 /usr/bin/env pip3 -r requirements.txt
 ```
 
+## 目录说明
+<pre>
+zabbix-aliyun-monitor
+  |_ Account    账户监控程序，监控阿里云账户余额和包年包月实例有效期
+  |_ MongoDB    阿里云MongoDB实例监控
+  |_ Notice     阿里云短信报警程序
+  |_ RDS        阿里云RDS-MySQL实例监控
+  |_ Redis      阿里云Redis实例监控
+</pre>
+
 ## 使用方法
 1. 从阿里云控制台获取 **AccessKey** ,并修改脚本中的 **API_Key** 与 **API_Secret**
 2. 修改区域 **RegionId**
