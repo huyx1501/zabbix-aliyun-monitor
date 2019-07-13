@@ -6,7 +6,12 @@ python = 2.7+ 或 python3.6+  其他版本未测试
 
 ## 安装依赖包
 ```shell
+# python3
 /usr/bin/env pip3 -r requirements.txt
+```
+```shell
+# python2
+/usr/bin/env pip2 -r requirements.txt
 ```
 
 ## 使用方法
@@ -23,6 +28,10 @@ python = 2.7+ 或 python3.6+  其他版本未测试
 修改脚本的执行权限
 ```shell
 chmod +x /usr/lib/zabbix/alertscripts/sms.py
+```
+**注意：如果不希望使用系统默认python版本，请修改sms.py第一行为你选择的版本**
+```python
+#!/usr/bin/env python
 ```
 5. 在Zabbix控制台创建报警媒介类型-->脚本，添加两个脚本参数
 ```
